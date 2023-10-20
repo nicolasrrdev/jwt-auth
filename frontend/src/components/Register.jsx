@@ -25,15 +25,15 @@ const Register = () => {
       <h2>Registro</h2>
       <form onSubmit={handleSubmit}>
         <div>
-          <label>Nombre de usuario:</label>
-          <input type='text' value={username} onChange={(e) => setUsername(e.target.value)} />
+          <label>Correo electrónico: </label>
+          <input type='text' value={username} onChange={(e) => setUsername(e.target.value)} autoComplete='username' /> <br /> <br />
         </div>
         <div>
-          <label>Contraseña:</label>
-          <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
+          <label>Contraseña: </label>
+          <input type='password' value={password} onChange={(e) => setPassword(e.target.value)} autoComplete='current-password' /> <br /> <br />
         </div>
         <div>
-          <button type='submit'>Registrarse</button>
+          <button type='submit'>Registrarse</button> <br /> <br />
         </div>
       </form>
       <div>

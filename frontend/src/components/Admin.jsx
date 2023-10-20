@@ -3,7 +3,7 @@ import axios from 'axios'
 import PropTypes from 'prop-types'
 import { Link } from 'react-router-dom'
 
-const Profile = () => {
+const Admin = () => {
   const handleLogout = () => {
     localStorage.removeItem('token')
     window.location = '/login'
@@ -28,10 +28,10 @@ const Profile = () => {
 
   return (
     <div>
-      <h2>Panel de Usuario</h2>
+      <h2>Panel de Admin</h2>
       <p>Nombre de usuario: {user.username}</p>
       <p>Rol: {user.role === 0 ? 'Usuario' : user.role === 1 ? 'Admin' : 'Cargando...'}</p>
-      <button onClick={handleLogout}>Cerrar Sesión</button>
+      <button onClick={handleLogout}>Cerrar Sesión</button> <br /> <br />
       <div>
         <Link to="/Register">Registrarse</Link>
       </div>
@@ -39,16 +39,16 @@ const Profile = () => {
         <Link to="/Login">Iniciar Sesión</Link>
       </div>
       <div>
-        <Link to="/Admin">Panel de Admin</Link>
+        <Link to="/Profile">Panel de Usuario</Link>
       </div>
     </div>
   )
 }
 
-Profile.propTypes = {
+Admin.propTypes = {
   user: PropTypes.shape({
     username: PropTypes.string.isRequired,
   }),
 }
 
-export default Profile
+export default Admin

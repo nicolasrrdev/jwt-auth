@@ -5,12 +5,13 @@ import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import cors from 'cors'
 import isEmail from 'validator/lib/isEmail.js'
+import 'dotenv/config'
 
 const app = express()
 const port = process.env.PORT || 3000
-const secretKey = 'superSecretKey'
+const secretKey = process.env.SECRET_KEY
 
-mongoose.connect('mongodb://127.0.0.1:27017/node-authentication', {
+mongoose.connect(process.env.MONGO_URL, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
@@ -91,7 +92,3 @@ app.get('/check-auth', (req, res) => {
 app.listen(port, () => {
   console.log(`Servidor en funcionamiento en el puerto ${port}`)
 })
-
-// Agregar mensajes de error en nodemon en consola
-// Verificar comportamientos si el token ha sido eliminado o modificado
-// https://github.com/JCamiloMedinaN/login

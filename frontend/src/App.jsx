@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react'
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom'
 import axios from 'axios'
 import PropTypes from 'prop-types'
+import './App.css'
 
 import Register from './components/Register'
 import Login from './components/Login'

@@ -1,1 +1,1 @@
-# MERN Auth JWT Example
+# MERN JWT Auth Project
